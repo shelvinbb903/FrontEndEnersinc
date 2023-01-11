@@ -23,8 +23,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts --omit=dev start",
-    "build": "react-scripts build",
+    "develop": "concurrently \"react-scripts start\"",
+    "start": "concurrently \"react-scripts --omit=dev start\"",
+    "build": "CI=false react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
