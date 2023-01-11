@@ -24,7 +24,7 @@
   },
   "scripts": {
     "develop": "CI=false react-scripts start",
-    "start": "CI=false react-scripts start",
+    "start": "CI=false NPM_CONFIG_PRODUCTION=false react-scripts start",
     "build": "CI=false react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
