@@ -20,7 +20,7 @@ import TextField from '@mui/material/TextField';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
+import Select from '@mui/material/Select';
 import { AlertComponent } from '../../components/AlertComponent';
 
 import './ListPersonPage.css';
@@ -109,6 +109,8 @@ export const ListPersonPage = () => {
         await dispatch(setDataPerson({type: "hobbie", value: data.hobbie}))
         await dispatch(setBooleanDisable({disable: true}))
         break;
+      default:
+        break;
     }
     await dispatch(setOpenDialog({type: "openDataPerson", value: true}))
   };
@@ -152,7 +154,7 @@ export const ListPersonPage = () => {
 
     const validateForm = await validateFormPerson();
 
-    if(validateForm == '') {
+    if(validateForm === '') {
       switch(typeRequest) {
         case "add":
           await dispatch(createPerson(request));
@@ -160,6 +162,8 @@ export const ListPersonPage = () => {
         case "edit":
           request.id = dataPerson.id;
           await dispatch(updatePerson(request))
+          break;
+        default:
           break;
       }
     } else {
@@ -181,19 +185,19 @@ export const ListPersonPage = () => {
   const validateFormPerson = () => {
     let message = [];
 
-    if(dataPerson.name.trim().length == 0) {
+    if(dataPerson.name.trim().length === 0) {
       message.push("Nombres");
     }
-    if(dataPerson.last_name.trim().length == 0) {
+    if(dataPerson.last_name.trim().length === 0) {
       message.push("Apellidos");
     }
-    if(dataPerson.document.trim().length == 0) {
+    if(dataPerson.document.trim().length === 0) {
       message.push("Documento");
     }
-    if(`${dataPerson.document_type}`.trim().length == 0) {
+    if(`${dataPerson.document_type}`.trim().length === 0) {
       message.push("Tipo Documento");
     }
-    if(dataPerson.hobbie.trim().length == 0) {
+    if(dataPerson.hobbie.trim().length === 0) {
       message.push("Hobbie");
     }
 
@@ -323,7 +327,7 @@ export const ListPersonPage = () => {
                   disabled={booleanDisable}
                 />
 
-                {mesageErrors != ''? <AlertComponent type="error" message={mesageErrors} />: null }               
+                {mesageErrors !== ''? <AlertComponent type="error" message={mesageErrors} />: null }               
                 
             </Box>
 

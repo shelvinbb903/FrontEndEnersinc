@@ -3,8 +3,6 @@ import { Rest } from './rest';
 export class PersonRest {
     restApi = new Rest();
 
-    constructor() {}
-
     /**
      * Servicio Rest para listar todos las persona mediante una peticion get
      *

@@ -1,8 +1,6 @@
 import axios from 'axios';
 
 export class Rest {
-    
-    constructor() {}
 
     /**
      * Consumir un servicio rest mediante una peticion tipo get
@@ -13,7 +11,7 @@ export class Rest {
      */
     getData = (url) => {
         return new Promise(async (resolve) => {
-            const resp = axios.get(url).then(({data}) => {
+            axios.get(url).then(({data}) => {
                 resolve({
                     error: false,
                     data: data.data
@@ -38,7 +36,7 @@ export class Rest {
      */
     postData = (url, data) => {
         return new Promise(async (resolve) => {
-            const resp = axios.post(url, data).then(({data}) => {
+            axios.post(url, data).then(({data}) => {
                 resolve({
                     error: false,
                     data: data.data
@@ -63,7 +61,7 @@ export class Rest {
      */
     updateData = (url, data) => {
         return new Promise(async (resolve) => {
-            const resp = axios.patch(url, data).then(({data}) => {
+            axios.patch(url, data).then(({data}) => {
                 resolve({
                     error: false,
                     data: data.data
@@ -88,7 +86,7 @@ export class Rest {
      */
     deleteData = (url, data) => {
         return new Promise(async (resolve) => {
-            const resp = axios.delete(url, { data }).then(({data}) => {
+            axios.delete(url, { data }).then(({data}) => {
                 resolve({
                     error: false,
                     data: data.data

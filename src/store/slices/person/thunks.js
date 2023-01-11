@@ -1,6 +1,6 @@
 import { PersonRest } from "../../../api/person-rest";
-import { constants, responseRest } from "../../../constants";
-import { setListPersons, setResponseObject } from "./personSlice";
+import { constants } from "../../../constants";
+import { setListPersons } from "./personSlice";
 
 const personApi = new PersonRest();
 
