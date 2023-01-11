@@ -25,7 +25,7 @@
   "scripts": {
     "develop": "CI=false react-scripts start",
     "start": "CI=false NPM_CONFIG_PRODUCTION=false react-scripts start",
-    "build": "CI=false react-scripts build",
+    "build": "concurrently \"CI=false react-scripts build\" \" set NODE_OPTIONS=--max_old_space_size=8096\"",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
