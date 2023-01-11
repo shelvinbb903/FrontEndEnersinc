@@ -24,7 +24,7 @@
   },
   "scripts": {
     "develop": "CI=false react-scripts start",
-    "start": "set NODE_OPTIONS=--max_old_space_size=8096 && CI=false NPM_CONFIG_PRODUCTION=false react-scripts start",
+    "start": "react-scripts --max_old_space_size=8096 start",
     "build": "CI=false react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
